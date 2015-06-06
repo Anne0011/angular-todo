@@ -1,0 +1,24 @@
+div(ng-controller='listCtrl')
+ h1 {{message}}
+ .row
+   .col-md-1
+   .col-md-10
+     table.table.table-hover
+       tbody
+         tr
+           th Title
+           th Description
+           th Due Date
+           th Priority
+           th
+           th
+         tr(ng-repeat='task in tasks')
+           td(ng-bind='task.title')
+           td {{task.description}}
+           td {{task.due_date}}
+           td {{task.priority}}
+           td
+             button.btn.btn-default.btn-xs.btn-success(type='button', ng-click='edit(task._id)') Edit
+           td
+             button.btn.btn-default.btn-xs.btn-danger(type='button', ng-click='remove(task._id)') Remove
+   .col-md-1

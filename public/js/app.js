@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives'
+  'myApp.directives',
+  'myApp.taskService'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
@@ -21,6 +22,10 @@ config(function ($routeProvider, $locationProvider) {
     when('/todo', {
       templateUrl: 'partials/todo',
       controller: 'TodoCtrl'
+    }).
+    when('/list', {
+      templateUrl: 'partials/list',
+      controller: 'listCtrl'
     }).
     otherwise({
       redirectTo: '/'

@@ -1,9 +1,14 @@
-nav.navbar.navbar-default
+nav.navbar.navbar-default(ng-controller="NavCtrl")
   .container
     .navbar-header
       a.navbar-brand(href='/') Angular todo
-    ul.nav.navbar-nav.navbar-right
+    ul.nav.navbar-nav.navbar-right(ng-show='!rootUser')
       li 
-        a(href='/authenticate') Register/Log In 
+        a(href='/authenticate') Register/Log In
+    ul.nav.navbar-nav.navbar-right(ng-show='rootUser') 
       li 
-        a(href='/todo') Todos
+        a(href='/list') List Todos
+      li 
+        a(href='/todo') Add
+      li
+        a.button.btn.btn-danger(ng-click='logout()') x {{rootUser}}
